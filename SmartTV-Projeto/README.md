@@ -1,4 +1,4 @@
-# 📺 Projeto: Controle de SmartTV (Java)
+#  Projeto: Controle de SmartTV (Java)
 
 Este projeto foi desenvolvido para praticar os conceitos fundamentais de **Programação Orientada a Objetos (POO)** na linguagem Java, simulando o estado e as interações reais de um usuário com o controle remoto de uma SmartTV.
 
