@@ -1,18 +1,39 @@
-## Getting Started
+#  Projeto: Monte Seu Carro (Java)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto foi desenvolvido para praticar conceitos básicos de **Programação Orientada a Objetos (POO)** e a manipulação de entradas do usuário utilizando a classe `Scanner` na linguagem Java.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+##  Funcionalidades
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+O sistema demonstra duas abordagens diferentes para lidar com os dados de um veículo:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+* **Abordagem POO (Estática):** Cria uma instância da classe, define a marca e o modelo sequencialmente e exibe os resultados no console.
+* **Abordagem Interativa (Scanner):** Solicita que o usuário digite as informações do carro (marca, modelo e ano) via terminal em tempo de execução.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+---
 
-## Dependency Management
+##  Estrutura de Arquivos
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+| Arquivo | Descrição |
+| :--- | :--- |
+| `Carro.java` | Classe que representa a entidade do carro. Possui o atributo `carroEscolhido` e os métodos para definir a marca e o modelo. |
+| `MonteSeuCarroOOP.java` | Classe principal (`main`) que executa a lógica estruturada em objetos. |
+| `MonteSeuCarroScanner.java` | Classe principal (`main`) que executa a lógica de leitura de dados do teclado. |
+
+---
+
+##  Detalhes dos Componentes
+
+### 1. Classe de Objeto (`Carro.java`)
+Contém a lógica de armazenamento temporário dos dados do veículo:
+* `MarcaEscolhida(String marca)`: Atribui o texto da marca à variável `carroEscolhido`.
+* `ModeloEscolhido(String modelo)`: Atribui o texto do modelo à mesma variável `carroEscolhido`.
+
+### 2. Execução OOP (`MonteSeuCarroOOP.java`)
+Instancia a classe `Carro` e exibe as informações conforme os métodos são chamados:
+
+```java
+Carro Carro = new Carro();
+Carro.MarcaEscolhida("Porche");  // Define e exibe a marca
+Carro.ModeloEscolhido("GT3 RS"); // Define e exibe o modelo
