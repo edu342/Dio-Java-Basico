@@ -1,18 +1,28 @@
-## Getting Started
+# 📺 Projeto: Controle de SmartTV (Java)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto foi desenvolvido para praticar os conceitos fundamentais de **Programação Orientada a Objetos (POO)** na linguagem Java, simulando o estado e as interações reais de um usuário com o controle remoto de uma SmartTV.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+##  Funcionalidades
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+O sistema simula as operações básicas de uma televisão através de métodos que alteram seus atributos em tempo real:
+* **Ligar / Desligar:** Altera o estado de funcionamento da TV.
+* **Controle de Volume:** Permite aumentar ou diminuir o volume de forma gradativa.
+* **Troca de Canais:** Permite mudar diretamente para um canal escolhido informando o número correspondente.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+##  Estrutura de Arquivos
 
-## Dependency Management
+| Arquivo | Descrição |
+| :--- | :--- |
+| `smartTV.java` | Classe que representa o objeto SmartTV. Contém os atributos (`ligada`, `canal`, `volume`) e os métodos para manipular esses estados. |
+| `Usuario.java` | Classe principal (`main`) que simula as ações de um usuário interagindo com o aparelho e exibindo as atualizações no console. |
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+---
+
+##  Detalhes dos Componentes
+
+### 1. Classe de Objeto (`smartTV.java`)
+Gerencia o estado interno do
