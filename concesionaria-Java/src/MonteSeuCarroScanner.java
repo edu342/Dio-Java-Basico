@@ -1,7 +1,7 @@
 import java.util.Locale;
 import java.util.Scanner;
 
-public class ConcessionariaScanner {
+public class MonteSeuCarroScanner {
     public static void main(String[] args) {
         // Criando instâncias da classe Carro (Padrão OOP)
     Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
