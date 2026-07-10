@@ -1,18 +1,40 @@
-## Getting Started
+##Projeto: Monte Seu Carro (Java)
+Este projeto foi desenvolvido para praticar conceitos básicos de Programação Orientada a Objetos (POO) e a manipulação de entradas do usuário utilizando a classe Scanner na linguagem Java.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Funcionalidades
+O sistema demonstra duas abordagens diferentes para lidar com os dados de um veículo:
 
-## Folder Structure
+Abordagem POO (Estática): Cria uma instância da classe, define a marca e o modelo sequencialmente e exibe os resultados no console.
 
-The workspace contains two folders by default, where:
+Abordagem Interativa (Scanner): Solicita que o usuário digite as informações do carro (marca, modelo e ano) via terminal em tempo de execução.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Estrutura de Arquivos
+Carro.java: Classe que representa a entidade do carro. Possui o atributo carroEscolhido e os métodos para definir a marca e o modelo.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+MonteSeuCarroOOP.java: Classe principal (main) que executa a lógica estruturada em objetos.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+MonteSeuCarroScanner.java: Classe principal (main) que executa a lógica de leitura de dados do teclado.
 
-## Dependency Management
+## Detalhes dos Componentes
+1. Classe de Objeto (Carro.java)
+Contém a lógica de armazenamento temporário dos dados do veículo:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+MarcaEscolhida(String marca): Atribui o texto da marca à variável carroEscolhido.
+
+ModeloEscolhido(String modelo): Atribui o texto do modelo à mesma variável carroEscolhido.
+
+## Execução OOP (MonteSeuCarroOOP.java)
+Instancia a classe Carro e exibe as informações conforme os métodos são chamados:
+
+Java
+Carro Carro = new Carro();
+Carro.MarcaEscolhida("Porche"); // Define e exibe a marca
+Carro.ModeloEscolhido("GT3 RS"); // Define e exibe o modelo
+3. Execução Interativa (MonteSeuCarroScanner.java)
+Captura o texto e os números digitados pelo usuário utilizando a configuração Locale.US:
+
+Lê a marca (scanner.next()).
+
+Lê o modelo (scanner.next()).
+
+Lê o ano do veículo (scanner.nextInt()).
