@@ -1,4 +1,4 @@
-##Projeto: Monte Seu Carro (Java)
+# Projeto: Monte Seu Carro (Java)
 Este projeto foi desenvolvido para praticar conceitos básicos de Programação Orientada a Objetos (POO) e a manipulação de entradas do usuário utilizando a classe Scanner na linguagem Java.
 
 ## Funcionalidades
