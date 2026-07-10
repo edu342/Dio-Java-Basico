@@ -1,18 +1,24 @@
-## Getting Started
+#  Conta de Banco - Terminal Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+---
 
-## Folder Structure
+###  Descrição
+O sistema recebe dados via console (nome, agência, número e saldo) e retorna uma mensagem de boas-vindas formatada. O foco principal foi lidar com o fluxo de dados e resolver problemas comuns de buffer do teclado em Java.
 
-The workspace contains two folders by default, where:
+---
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+###  Funcionalidades
+- [x] Captura de dados via `Scanner`.
+- [x] Tratamento de exceções de buffer (limpeza de `\n` após `nextInt()`).
+- [x] Formatação de saída com `System.out.println`.
+---
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+###  Tecnologias
+- **Linguagem:** Java (JDK 17)
+- **Biblioteca:** `java.util.Scanner`
+- **Padrão:** Google Java Style Guide [8]
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+---
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Lições Aprendidas
+Apliquei o conceito de previsibilidade ao refatorar a entrada de dados. Aprendi que o método next() lê apenas até o primeiro espaço, por isso migrei para o nextLine() para suportar nomes completos, garantindo um código mais robusto [Histórico da Conversa].
