@@ -26,11 +26,12 @@ ModeloEscolhido(String modelo): Atribui o texto do modelo à mesma variável car
 ## Execução OOP (MonteSeuCarroOOP.java)
 Instancia a classe Carro e exibe as informações conforme os métodos são chamados:
 
-Java
+Java ```
 Carro Carro = new Carro();
 Carro.MarcaEscolhida("Porche"); // Define e exibe a marca
 Carro.ModeloEscolhido("GT3 RS"); // Define e exibe o modelo
 3. Execução Interativa (MonteSeuCarroScanner.java)
+```
 Captura o texto e os números digitados pelo usuário utilizando a configuração Locale.US:
 
 Lê a marca (scanner.next()).
