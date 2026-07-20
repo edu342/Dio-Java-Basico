@@ -1,114 +1,184 @@
-Desafio de Controle de Fluxo
+#  Desafio de Controle de Fluxo
 
-Sobre o Projeto
+##  Sobre o Projeto
 
-Este projeto foi desenvolvido como um exercício prático para a trilha de Java Básico, com o objetivo de consolidar a aprendizagem sobre estruturas de controle de fluxo, laços de repetição e o mecanismo de tratamento de exceções personalizadas em Java.
+Este projeto foi desenvolvido como um exercício prático da trilha de **Java Básico**, com o objetivo de consolidar os conceitos de:
 
-O sistema recebe dois números inteiros através do terminal. A partir desses números, o programa calcula a quantidade de interações necessárias e realiza uma contagem progressiva no console. Caso as regras de negócio sejam violadas (por exemplo, se o primeiro número for maior do que o segundo), o fluxo é interrompido por uma exceção customizada.
+- Estruturas de controle de fluxo;
+- Laços de repetição (`for`);
+- Tratamento de exceções;
+- Criação de exceções personalizadas em Java.
 
-Funcionalidades Principais
+O sistema recebe **dois números inteiros** através do terminal. A partir desses valores, calcula a quantidade de interações necessárias e realiza uma contagem progressiva no console.
 
-Captura de Dados: Leitura segura de dois números inteiros fornecidos pelo usuário.
+Caso a regra de negócio seja violada — ou seja, se o **primeiro número for maior que o segundo** — o fluxo é interrompido por uma exceção personalizada.
 
-Validação de Regras: Verificação condicional para garantir a integridade dos parâmetros de entrada.
+---
 
-Exceções Personalizadas: Lançamento da exceção ParametrosInvalidosException quando o fluxo de dados estiver incorreto.
+##  Funcionalidades
 
-Contagem Progressiva: Execução de um laço de repetição for que exibe mensagens numeradas de forma sequencial.
+-  Leitura de dois números inteiros via terminal.
+-  Validação dos parâmetros informados.
+-  Lançamento de exceção personalizada (`ParametrosInvalidosException`).
+-  Contagem progressiva utilizando o laço `for`.
+-  Tratamento de erros com `try-catch`.
 
-⚠️ Regra de Ouro do Sistema:
+---
 
-O primeiro parâmetro deve ser, obrigatoriamente, menor ou igual ao segundo parâmetro. Caso contrário, a contagem não será iniciada e o sistema apresentará um aviso de erro.
+##  Regra de Negócio
 
-Demonstração de Fluxo
+> O **primeiro parâmetro deve ser menor ou igual ao segundo parâmetro**.
 
-A tabela abaixo exemplifica o comportamento do programa de acordo com as entradas fornecidas:
+Se essa condição não for atendida, o programa interrompe a execução e exibe a seguinte mensagem:
 
-Primeiro Parâmetro
+```text
+O segundo parâmetro deve ser maior que o primeiro
+```
 
-Segundo Parâmetro
+---
 
-Comportamento Esperado
+##  Fluxo de Funcionamento
 
-Resultado no Console
+```mermaid
+flowchart TD
+    A[Início] --> B[Ler primeiro parâmetro]
+    B --> C[Ler segundo parâmetro]
+    C --> D{Primeiro > Segundo?}
 
-12
+    D -- Sim --> E[Lança ParametrosInvalidosException]
+    E --> F[Exibe mensagem de erro]
 
-30
+    D -- Não --> G[Calcula diferença]
+    G --> H[Executa laço for]
+    H --> I[Imprime contagem]
+    I --> J[Fim]
+```
 
-Sucesso (18 interações)
+---
 
-Imprime do número 1 ao 18
+## Exemplos de Execução
 
-30
+| Primeiro Parâmetro | Segundo Parâmetro | Comportamento | Resultado |
+|-------------------:|------------------:|---------------|-----------|
+| 12 | 30 |  Sucesso | Imprime do número **1 ao 18** |
+| 30 | 12 |  Erro | `O segundo parâmetro deve ser maior que o primeiro` |
 
-12
+---
 
-Falha detectada
+##  Exemplo de Execução
 
-Mensagem: "O segundo parâmetro deve ser maior que o primeiro"
+### Entrada
 
-Exemplo de Execução Correta
-
+```text
 Digite o primeiro parâmetro:
 12
+
 Digite o segundo parâmetro:
 30
+```
+
+### Saída
+
+```text
 Imprimindo o número 1
 Imprimindo o número 2
+Imprimindo o número 3
 ...
 Imprimindo o número 18
+```
 
+---
 
-Estrutura do Código
+##  Estrutura do Projeto
 
-O projeto está dividido em dois arquivos de código fonte complementares:
+```text
+src/
+├── Contador.java
+└── ParametrosInvalidosException.java
+```
 
-Contador.java
+### 📌 `Contador.java`
 
-Contém o ponto de entrada do programa (método main).
+Responsável por:
 
-Faz a leitura dos parâmetros utilizando a classe Scanner.
+- Conter o método `main()`;
+- Ler os parâmetros utilizando `Scanner`;
+- Tratar exceções com `try-catch`;
+- Implementar o método:
 
-Trata potenciais erros através de uma estrutura try-catch.
+```java
+contar(int parametroUm, int parametroDois)
+```
 
-Implementa o método contar(int parametroUm, int parametroDois).
+---
 
-ParametrosInvalidosException.java
+### `ParametrosInvalidosException.java`
 
-Classe de exceção personalizada que estende Exception.
+Classe de exceção personalizada responsável por representar a violação da regra de negócio.
 
-Representa o erro de negócio específico do nosso domínio.
+```java
+public class ParametrosInvalidosException extends Exception {
 
-Como Executar o Programa
+    public ParametrosInvalidosException(String mensagem) {
+        super(mensagem);
+    }
 
-Para compilar e rodar esta aplicação na sua máquina local, siga os passos indicados abaixo no seu terminal.
+}
+```
 
-Certifique-se de que tem o Java JDK instalado no seu computador.
+---
 
-Acesse a pasta onde se encontram os arquivos do projeto:
+##  Como Executar
 
+### 1. Acesse a pasta do projeto
+
+```bash
 cd caminho/para/o/projeto/src
+```
 
+### 2. Compile os arquivos
 
-Compile os dois arquivos Java em simultâneo:
-
+```bash
 javac Contador.java ParametrosInvalidosException.java
+```
 
+### 3. Execute a aplicação
 
-Execute a aplicação principal:
-
+```bash
 java Contador
+```
 
+---
 
-Aprendizados Adquiridos
+##  Conceitos Praticados
 
-O desenvolvimento deste projeto permitiu dominar técnicas essenciais do ecossistema Java:
+Durante o desenvolvimento deste projeto foram aplicados os seguintes conceitos:
 
-Utilização correta da classe Scanner para interagir com o terminal.
+- Entrada de dados com `Scanner`;
+- Estruturas condicionais (`if`);
+- Laços de repetição (`for`);
+- Tratamento de exceções (`try-catch`);
+- Criação de exceções personalizadas;
+- Uso de `throw` e `throws`;
+- Organização de responsabilidades entre classes;
+- Boas práticas na validação de regras de negócio.
 
-Diferenciação clara entre os conceitos de throw (para lançar erros no fluxo ativo) e throws (para declarar perigos na assinatura de métodos).
+---
 
-Estruturação de blocos try-catch para captura de eventos inesperados.
+##  Tecnologias
 
-Isolamento de regras de negócio em classes dedicadas a exceções, promovendo um código limpo e de fácil manutenção.
+- Java
+- JDK 17+ (ou superior)
+- Terminal / Prompt de Comando
+
+---
+
+##  Objetivo
+
+Este desafio faz parte da trilha de **Java Básico** da **DIO (Digital Innovation One)** e tem como objetivo praticar conceitos fundamentais da linguagem Java, especialmente controle de fluxo e tratamento de exceções.
+
+---
+
+## Autor
+Eduardo Gomes Cardoso
+Desenvolvido como parte dos desafios práticos da **DIO** para aprimorar conhecimentos em Java.
